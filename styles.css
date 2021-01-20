@@ -44,6 +44,8 @@ body {
     display: block;
   }
   
+
+
 }
 
 @media screen and (max-width: 600px) {
@@ -58,6 +60,8 @@ body {
     display: block;
     text-align: left;
   }
+
+ 
 }
 
 .section{
@@ -65,23 +69,20 @@ body {
 }
 
 div.profilePic{
-float: left;
 margin-top: 5px;
-margin-left: 60px;
-padding-left: 30px;
+padding: 5px;
+float: left;
 }
 
 .profilePic img{
   border-radius: 100px;
-  height: 450px;
-  width: 450px;
 }
 
 div.container{
   text-align: center;
   padding-top: 95px;
-  margin-left: 490px;
   color: #ffff;
+ margin-top: 155px;
 }
 
 .social-media{
@@ -112,25 +113,31 @@ margin-top: 50px;
 
 form{
   color: #ffff;
-  padding-left: 100px;
-  margin-top: 80px;
+  /* padding-left: 100px; */
+  margin-top: 30px;
 }
 
 
 .contact-section{
-  display: flex;
-justify-content: center;
-margin-top: 160px;
-padding: 30px;  
+  /* display: flex; */
+/* text-align: center; */
+margin-top: 60px;
+padding: 30px; 
+text-align: center; 
+
 }
 
 .messo{
-  padding: 50px;
+  padding: 20px;
 }
 
+
   .address{
-    margin-top: 90px;
+    margin-top: 30px;
+    /* float: left; */
 }
+
+
 
 h3{
 text-align: center;
@@ -175,11 +182,23 @@ font-size: 30px;
 }
 
 .flip-card-back {
-  background-color: #2980b9;
-  color: white;
+  background-color:#ffff;
+  color:#000;
   transform: rotateY(180deg);
 }
 
 .projects{
   text-align: center;
 }
+
+.skills li{
+  color:#ffff;
+  text-align: center;
+  display: block;
+  margin-right: 40px;
+}
+
+
+
+
+
