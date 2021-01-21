@@ -1,4 +1,42 @@
 <?php
+
+$servername = "localhost";
+$user = "root";
+$pass = "";
+$db = "profile";
+
+$conn = new mysqli($servername,$user,$pass,$db);
+
+// if($conn->error){
+//     echo "DB error ".$conn->error."";
+// }
+// else{
+//     echo "Connection successful";
+// }
+
+if(isset($_POST['send'])){
+    echo "<br>";
+    
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+
+    $sql = "insert into inbox (name,email,message) values ('$name','$email','$message')";
+
+    if($conn->query($sql)){
+        // echo "message sent SUCCESSFULLY!!!";
+        echo '<span style="color:#ffffff;">message sent SUCCESSFULLY!!!</span>';
+
+    }
+    else{
+        echo "Error: ".$conn->error;
+    }
+
+}
+
+?>
+
+<?php
 include 'header.php';
 ?>
  <title>Contact</title>
@@ -8,15 +46,13 @@ include 'header.php';
 <div class="topnav" id="myTopnav">
   <a href="./index.php">Home</a>
   <a href="./projects.php">Projects and Publications</a>
-  <a href="./blog.php">Blog</a>
+  <!-- <a href="./blog.php">Blog</a> -->
   <a href="#contact.php" class="active">Contact</a>
   <a href="./dashboard.php" class="loginbtn">Login</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
 </div>
-
-
 <div class="contact-section">
 <h3 class="hcontact">Contact </h3>
 <div class="address">

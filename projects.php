@@ -8,7 +8,7 @@ include 'header.php';
 <div class="topnav" id="myTopnav">
   <a href="./index.php">Home</a>
   <a href="#projects.php" class="active">Projects and Publications</a>
-  <a href="./blog.php">Blog</a>
+  <!-- <a href="./blog.php">Blog</a> -->
   <a href="./contact.php">Contact</a>
   <a href="./dashboard.php" class="loginbtn">Login</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">

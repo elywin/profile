@@ -8,7 +8,7 @@ include 'header.php';
 <div class="topnav" id="myTopnav">
   <a href="#home" class="active">Home</a>
   <a href="./projects.php">Projects and Publications</a>
-  <a href="./blog.php">Blog</a>
+  <!-- <a href="./blog.php">Blog</a> -->
   <a href="./contact.php">Contact</a>
   <a href="./dashboard.php" class="loginbtn">Login</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -22,8 +22,8 @@ include 'header.php';
 
 
 <div class="container">
-<p>Elywin Michael Lukeera</p>
-<p>Full-Stack developer</p>
+<h3>Elywin Michael Lukeera</h3>
+<h2>Full-Stack developer</h2>
 <p>A second year Computer Science student at Uganda Christian University<br> 
  driven by curiosity and a lifelong student of society seeking a fresh challenge 
  for growth in the realm of technology.
