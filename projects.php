@@ -17,16 +17,52 @@ include 'header.php';
 </div>
 
   <h3>Skills</h3>
+  <ul>
+    <li style="font-weight:950; color:white; text-align:center">Web development</li>
+      
+  <?php
+
+$servername = "localhost";
+$user = "root";
+$pass = "";
+$db = "profile";
+
+$conn = new mysqli($servername,$user,$pass,$db);
+
+  if(isset($_POST['delete'])){
+    echo "<br>";
+    
+    $name= $_POST['name'];
+   
+   
+
+    $sqld =  $sql="DELETE FROM description WHERE name = '$name'";
+    if($conn->query($sqld)){
+        // echo "message sent SUCCESSFULLY!!!";
+        echo '<span style="color:green;"> about message deleted SUCCESSFULLY!!!</span>';
+
+    }
+    else{
+        echo "Error: ".$conn->error;
+    }
+  }
+    $sqlr = "SELECT * FROM skills";
+    $result = $conn->query($sqlr);
+
+    while($row = $result->fetch_assoc()){
+
+?>
+
   <div class="skills">
    
-    <ul>
-    <li style="font-weight:950;">Web development</li>
-      <li>Reactjs</li>
-      <li>Nodejs</li>
-      <li>MongoDB</li>
-      <li>Laravel</li>
+    
+      <li><?php echo $row['skill']; ?></li>
+      <?php
+        }
+        ?>
+      
     </ul>
-
+   
   <h3>Other</h3>
   <ul>
     <li>Version control</li>

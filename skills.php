@@ -17,9 +17,109 @@ include 'header.php';
     
 <div class="main">
   <h2>Skills</h2>
-  <p> <span class="textarea" role="textbox" contenteditable></span></p></body>
-  <h2>Other</h2>
-  <p> <span class="textarea" role="textbox" contenteditable></span></p></body>
+  <?php
+
+$servername = "localhost";
+$user = "root";
+$pass = "";
+$db = "profile";
+
+$conn = new mysqli($servername,$user,$pass,$db);
+
+// if($conn->error){
+//     echo "DB error ".$conn->error."";
+// }
+// else{
+//     echo "Connection successful";
+// }
+
+if(isset($_POST['add'])){
+    echo "<br>";
+    
+    $skill= $_POST['skill'];
+   
+   
+
+    $sql = "insert into skills(skill) values ('$skill')";
+    if($conn->query($sql)){
+        // echo "message sent SUCCESSFULLY!!!";
+        echo '<span style="color:green;"> skill added SUCCESSFULLY!!!</span>';
+
+    }
+    else{
+        echo "Error: ".$conn->error;
+    }
+  }
+?>
+        <form action="skills.php" method="POST">
+        <input type="text" name="skill" />
+        <br><br>
+      <input type="submit" name="add" value="add" />
+        </form>
+        <br><br>
+
+        <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "profile";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$tbl="skills"; // Table name 
+$sql = "SELECT * FROM $tbl";
+$result = $conn->query($sql);
+while($rows = $result->fetch_assoc()){
+?>
+<?php
+  
+echo '<span style="color:green;"> '.$rows['skill'].'</span>';
+
+
+echo "<pre>"
+?> 
+<a href="skills.php?skill=<? echo $rows['skill']; ?>">delete</a>
+<hr> 
+<?php
+}
+?>
+<?php
+$conn->close();
+?>
+
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "profile";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$tbl="skills"; 
+$skill = $_GET['skill'];
+$sqlD="DELETE FROM $tbl WHERE skill = '$skill'";
+$result = $conn->query($sqlD);
+if($result){
+    // echo "Deleted Successfully";
+    // echo "<BR>";
+    // echo "<a href='inbox.php'>Back to main page</a>";
+}else {
+    echo '<span style="color:green;">ERORR</span>';
+}
+?> 
+<?php
+$conn->close();
+?>
 </div>
 </div>
 </body>

@@ -1,40 +1,3 @@
-<?php
-
-$servername = "localhost";
-$user = "root";
-$pass = "";
-$db = "profile";
-
-$conn = new mysqli($servername,$user,$pass,$db);
-
-// if($conn->error){
-//     echo "DB error ".$conn->error."";
-// }
-// else{
-//     echo "Connection successful";
-// }
-
-if(isset($_POST['send'])){
-    echo "<br>";
-    
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
-
-    $sql = "insert into inbox (name,email,message) values ('$name','$email','$message')";
-
-    if($conn->query($sql)){
-        // echo "message sent SUCCESSFULLY!!!";
-        echo '<span style="color:#ffffff;">message sent SUCCESSFULLY!!!</span>';
-
-    }
-    else{
-        echo "Error: ".$conn->error;
-    }
-
-}
-
-?>
 
 <?php
 include 'header.php';
@@ -64,6 +27,48 @@ include 'header.php';
     
     
     <div class="contactForm">
+
+
+    <?php
+
+$servername = "localhost";
+$user = "root";
+$pass = "";
+$db = "profile";
+
+$conn = new mysqli($servername,$user,$pass,$db);
+
+// if($conn->error){
+//     echo "DB error ".$conn->error."";
+// }
+// else{
+//     echo "Connection successful";
+// }
+
+if(isset($_POST['send'])){
+    echo "<br>";
+    
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+
+    $sql = "insert into inbox (name,email,message) values ('$name','$email','$message')";
+
+    if($conn->query($sql)){
+        // echo "message sent SUCCESSFULLY!!!";
+        echo '<span style="color:green;">message sent SUCCESSFULLY!!!</span>';
+
+    }
+    else{
+        echo "Error: ".$conn->error;
+    }
+
+}
+
+?>
+
+
+
       <form action="./contact.php" method="POST">
 
         Name
@@ -81,6 +86,8 @@ include 'header.php';
         <input type="submit" name="send" value="send" />
         
       </form>
+
+
     </div>
 
     <div class="social-media">

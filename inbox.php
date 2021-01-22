@@ -17,7 +17,9 @@ include 'header.php';
     
 <div class="main">
   <h2>Inbox</h2>
-  <?php
+
+
+<?php
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -30,18 +32,53 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$Rsql = "SELECT name, email, message FROM inbox";
-$result = $conn->query($Rsql);
-if ($result->num_rows > 0) {
-  echo "<table ><tr><th style=padding:50px;>Name</th><th>email</th><th>Message</th></tr>";
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-    echo "<tr><td style=padding-left:10px;>".$row["name"]."</td><td style=padding-left:10px;>".$row["email"]."</td><td style=padding-left:100px;>".$row["message"]."</td></tr>";
-  }
-  echo "</table>";
-} else {
-  echo "0 results";
+$tbl="inbox"; // Table name 
+$sql = "SELECT * FROM $tbl";
+$result = $conn->query($sql);
+while($rows = $result->fetch_assoc()){
+?>
+<?php
+  
+echo "Name: ".$rows['name'];
+echo "<pre>"."Email: ".$rows['email'];
+echo "<pre>"."Message: ".$rows['message']; 
+echo "<pre>"
+?> 
+<a href="inbox.php?name=<? echo $rows['name']; ?>">delete</a>
+<hr> 
+<?php
 }
+?>
+<?php
+$conn->close();
+?>
+
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "profile";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+    $tbl="inbox"; 
+    $name = $_GET['name'];
+    $sqlD="DELETE FROM $tbl WHERE name = '$name'";
+    $result = $conn->query($sqlD);
+    if($result){
+        // echo "Deleted Successfully";
+        // echo "<BR>";
+        // echo "<a href='inbox.php'>Back to main page</a>";
+    }else {
+        echo '<span style="color:green;">ERORR</span>';
+    }
+    ?> 
+<?php
 $conn->close();
 ?>
 
