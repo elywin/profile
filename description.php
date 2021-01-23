@@ -63,19 +63,19 @@ include 'header.php';
         <form action="./description.php" method="POST">
           Name
           <br>
-          <input style="width: 500px;" type="text" name="name" value="<?php echo $row['name']; ?>" />
+          <input style="width: 300px;" type="text" name="name" value="<?php echo $row['name']; ?>" />
           <br><br>
           Title
           <br>
-          <input style="width: 500px;" type="text" name="title" value="<?php echo $row['title']; ?>" />
+          <input style="width: 300px;" type="text" name="title" value="<?php echo $row['title']; ?>" />
           <br><br>
           Description
           <br>
-          <input style="width: 500px;height:100px;" type="textarea" name="about" value="<?php echo $row['about']; ?>" />
+          <input style="width: 300px;height:100px;" type="textarea" name="about" value="<?php echo $row['about']; ?>" />
           <br><br>
           Interest
           <br>
-          <input style="width: 500px;height:100px;" type="textarea" name="interest" value="<?php echo $row['interest']; ?>" />
+          <input style="width: 300px;height:100px;" type="textarea" name="interest" value="<?php echo $row['interest']; ?>" />
           <br><br>
 
           <input type="submit" name="update" value="update" />

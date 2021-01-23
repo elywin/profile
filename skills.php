@@ -51,7 +51,7 @@ include 'header.php';
       }
       ?>
       <form action="skills.php" method="POST">
-        <input style="width:400px;" type="text" name="skill" />
+        <input style="width:300px;" type="text" name="skill" />
         <br><br>
         <input type="submit" name="add" value="add" />
       </form>
@@ -153,7 +153,7 @@ include 'header.php';
       }
       ?>
       <form action="skills.php" method="POST">
-        <input style="width:400px;" type="text" name="otherskill" />
+        <input style="width:300px;" type="text" name="otherskill" />
         <br><br>
         <input type="submit" name="addo" value="add" />
       </form>

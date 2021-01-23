@@ -224,13 +224,16 @@ font-size: 30px;
 }
 
 .main {
- /* Same as the width of the sidenav */
-  color: #ffff;
-}
+  /* Same as the width of the sidenav */
+   color: #ffff;
+ margin-left: 200px;
+ }
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+
+  
 }
 
 .input,
@@ -272,6 +275,7 @@ font-size: 30px;
   max-width: 500px;
   margin: 0 auto;
   padding: 1rem;
+  display: flex;
 }
 
 p strong {
