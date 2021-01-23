@@ -18,8 +18,6 @@ include 'header.php';
 
     <div class="main">
       <h2>Inbox</h2>
-
-
       <?php
       $servername = "localhost";
       $username = "root";
@@ -40,7 +38,7 @@ include 'header.php';
       ?>
         <?php
 
-        echo "Name: " . $rows['name'];
+        echo "<pre>"."Name: " . $rows['name'];
         echo "<pre>" . "Email: " . $rows['email'];
         echo "<pre>" . "Message: " . $rows['message'];
         echo "<pre>"

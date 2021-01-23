@@ -255,6 +255,7 @@ font-size: 30px;
   padding: 0 1rem;
 }
 
+
 .textarea {
   display: block;
   width: 100%;
@@ -264,15 +265,8 @@ font-size: 30px;
   line-height: 20px;
 }
 
-.textarea[contenteditable]:empty::before {
-  content: "Placeholder still possible";
-  color: gray;
-}
 
-/* Just for demo */
-* {
-  box-sizing: border-box;
-}
+
 .body1 {
   font-family: "Heebo", sans-serif;
   max-width: 500px;

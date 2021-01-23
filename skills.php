@@ -51,7 +51,7 @@ include 'header.php';
       }
       ?>
       <form action="skills.php" method="POST">
-        <input type="text" name="skill" />
+        <input style="width:400px;" type="text" name="skill" />
         <br><br>
         <input type="submit" name="add" value="add" />
       </form>
@@ -119,7 +119,7 @@ include 'header.php';
       <?php
       $conn->close();
       ?>
-      <h2>Other</h2>
+      <h2>Other Skills</h2>
       <?php
 
       $servername = "localhost";
@@ -153,7 +153,7 @@ include 'header.php';
       }
       ?>
       <form action="skills.php" method="POST">
-        <input type="text" name="otherskill" />
+        <input style="width:400px;" type="text" name="otherskill" />
         <br><br>
         <input type="submit" name="addo" value="add" />
       </form>
@@ -178,11 +178,8 @@ include 'header.php';
       while ($rows = $result->fetch_assoc()) {
       ?>
         <?php
-
-        echo '<span style="color:green;"> ' . $rows['skill'] . '</span>';
-
-
-        echo "<pre>"
+        echo '<span style="color:green;"> ' . $rows['skill'] . '</span>'; 
+        echo "<pre>";
         ?>
         <a href="skills.php?skill=<? echo $rows['skill']; ?>">delete</a>
         <hr>
