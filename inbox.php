@@ -43,7 +43,7 @@ include 'header.php';
         echo "<pre>" . "Message: " . $rows['message'];
         echo "<pre>"
         ?>
-        <a href="inbox.php?name=<? echo $rows['name']; ?>">delete</a>
+        <a href="inbox.php?name=<? echo $rows['name']; ?>" >delete</a>
         <hr>
       <?php
       }
@@ -65,6 +65,7 @@ include 'header.php';
         die("Connection failed: " . $conn->connect_error);
       }
 
+
       $tbl = "inbox";
       $name = $_GET['name'];
       $sqlD = "DELETE FROM $tbl WHERE name = '$name'";
@@ -76,6 +77,7 @@ include 'header.php';
       } else {
         echo '<span style="color:green;">ERORR</span>';
       }
+    
       ?>
       <?php
       $conn->close();
