@@ -65,6 +65,7 @@ include 'header.php';
         die("Connection failed: " . $conn->connect_error);
       }
 
+      if (isset($_GET['name'])) {
 
       $tbl = "inbox";
       $name = $_GET['name'];
@@ -77,7 +78,7 @@ include 'header.php';
       } else {
         echo '<span style="color:green;">ERORR</span>';
       }
-    
+      }
       ?>
       <?php
       $conn->close();

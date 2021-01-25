@@ -103,6 +103,7 @@ include 'header.php';
       if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
       }
+      if (isset($_GET['skill'])) {
 
       $tbl = "skills";
       $skill = $_GET['skill'];
@@ -115,6 +116,7 @@ include 'header.php';
       } else {
         echo '<span style="color:green;">ERORR</span>';
       }
+    }
       ?>
       <?php
       $conn->close();
@@ -202,6 +204,7 @@ include 'header.php';
       if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
       }
+      if (isset($_GET['skill'])) {
 
       $tbl = "otherskill";
       $skill = $_GET['skill'];
@@ -214,6 +217,7 @@ include 'header.php';
       } else {
         echo '<span style="color:green;">ERORR</span>';
       }
+    }
       ?>
       <?php
       $conn->close();
